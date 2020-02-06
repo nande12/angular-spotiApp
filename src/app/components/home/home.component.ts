@@ -9,18 +9,25 @@ import { SpotifyService } from "../../services/spotify.service";
 export class HomeComponent implements OnInit {
 
   newSongs: any[] = [];
+  errorAlert: boolean;
+  errorMessage: string;
   loading: boolean;
 
 
   constructor(private spotify: SpotifyService ) {
 
     this.loading = true;
+    this.errorAlert = false;
 
     this.spotify.getNewReleases()
       .subscribe( (data:any) => {
         this.newSongs = data;
         this.loading = false;
-      })
+      }, ( error )=> {
+          this.errorAlert = true;
+          this.loading = false;
+          this.errorMessage = error.error.error.message;
+      });
 
   }
 
