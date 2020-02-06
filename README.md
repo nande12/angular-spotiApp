@@ -8,4 +8,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## How to test it
 
-To test it create an account here `https://developer.spotify.com/`. Generate a token with you client_id and client_secret, go to this file:'src/app/services/spotify.service.ts' and update the token in line 19 into the const headers.
+To test it create an account here `https://developer.spotify.com/`. Generate a token with you client_id and client_secret, go to this file: _src/app/services/spotify.service.ts_ and update the token in line 19 into the const headers.
