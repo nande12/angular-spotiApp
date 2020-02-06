@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col">
+        <input #term type="text" (keyup)="search(term.value)" class="form-control" placeholder="Search an artist...">
+    </div>
+</div>
+
+<div class="card-columns margin-top">
+
+    <div class="card" *ngFor="let artist of artists">
+        <img [src]="artist.images | noimage" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{artist.name}}</h5>
+        </div>
+    </div>
+
+</div>
